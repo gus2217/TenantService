@@ -8,7 +8,6 @@
         public int IdNo { get; set; }
         public string Email { get; set; }
         public string Employer { get; set; }
-        public ICollection<Unit> Units { get; set; } = new List<Unit>();
         public int PropertyId { get; set; }
     }
 }

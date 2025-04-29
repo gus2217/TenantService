@@ -27,7 +27,6 @@ namespace KejaHUnT_TenantAPI.Repositories.Implementations
 
             if (existingTenant != null)
             {
-                _dbContext.Units.RemoveRange(existingTenant.Units);
                 _dbContext.Tenants.Remove(existingTenant);
                 await _dbContext.SaveChangesAsync();
                 return existingTenant;
@@ -37,17 +36,16 @@ namespace KejaHUnT_TenantAPI.Repositories.Implementations
 
         public async Task<IEnumerable<Tenant>> GetAllAsync()
         {
-            return await _dbContext.Tenants.Include(x => x.Units).ToListAsync();
+            return await _dbContext.Tenants.ToListAsync();
         }
 
         public async Task<Tenant?> GetTenantByIdAsync(long id)
         {
-            return await _dbContext.Tenants.Include(x => x.Units).FirstOrDefaultAsync(x => x.Id == id);
+            return await _dbContext.Tenants.FirstOrDefaultAsync(x => x.Id == id);
         }
-
         public async Task<Tenant?> UpdateAsync(long id, UpdateTenantRequestDto tenant)
         {
-            var existingTenant = await _dbContext.Tenants.Include(x => x.Units)
+            var existingTenant = await _dbContext.Tenants
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (existingTenant == null)
@@ -57,17 +55,8 @@ namespace KejaHUnT_TenantAPI.Repositories.Implementations
 
             _dbContext.Entry(existingTenant).CurrentValues.SetValues(tenant);
 
-            _dbContext.Units.RemoveRange(existingTenant.Units);
 
-            existingTenant.Units = tenant.Units.Select(u => new Unit
-            {
-                Price = u.Price,
-                Type = u.Type,
-                Bathrooms = u.Bathrooms,
-                Size = u.Size,
-                NoOfUnits = u.NoOfUnits,
-            }).ToList();
-
+           
             await _dbContext.SaveChangesAsync();
 
             return existingTenant;
