@@ -8,8 +8,6 @@ namespace KejaHUnT_TenantAPI.Data
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
-
         public DbSet<Tenant> Tenants { get; set; }
-        public DbSet<Unit> Units { get; set; }
     }
 }

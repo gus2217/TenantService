@@ -6,13 +6,11 @@ namespace KejaHUnT_TenantAPI.Utils
 {
     public class MappingProfile : Profile
     {
-            public MappingProfile()
-            {
-                CreateMap<Tenant, CreateTenantRequestDto>().ReverseMap();
-                CreateMap<Unit, CreateUnitRequestDto>().ReverseMap();
-                CreateMap<Tenant, TenantDto>().ReverseMap();
-                CreateMap<Unit, UnitDto>().ReverseMap();
+        public MappingProfile()
+        {
+            CreateMap<Tenant, CreateTenantRequestDto>().ReverseMap();
+            CreateMap<Tenant, TenantDto>().ReverseMap();
         }
-        
+
     }
 }
