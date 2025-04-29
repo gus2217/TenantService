@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KejaHUnT_TenantAPI", "..\KejaHUnT_TenantAPI\KejaHUnT_TenantAPI.csproj", "{5C6FFDB7-CF82-4AA7-7833-EC5B7D619175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C6FFDB7-CF82-4AA7-7833-EC5B7D619175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C6FFDB7-CF82-4AA7-7833-EC5B7D619175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C6FFDB7-CF82-4AA7-7833-EC5B7D619175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C6FFDB7-CF82-4AA7-7833-EC5B7D619175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFEEB8F9-EE28-4B98-8D60-5431068C649E}
+	EndGlobalSection
+EndGlobal
